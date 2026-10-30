@@ -106,6 +106,45 @@ details p { color: var(--muted); margin: 0.6rem 0 0; }
 .field .hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
 .field input, .field textarea, .field select { width: 100%; padding: 0.7rem; border: 1px solid var(--line); border-radius: 6px; font: inherit; background: #fff; }
 .field textarea { min-height: 7rem; resize: vertical; }
+.field-help { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
+
+/* Form banners (rendered by js/forms.js from the ?sent / ?error redirect) */
+.form-banner:empty { display: none; }
+.form-banner p {
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+}
+.form-banner--success { background: #e7f4ec; border-color: #1a6b4a; color: #134f38; font-weight: 600; }
+.form-banner--error { background: #fdf0ef; border-color: #b3423a; color: #8c2f28; }
+.form-banner--error a { color: #8c2f28; font-weight: 700; }
+
+/* Inline field validation */
+.field-error { display: block; color: #8c2f28; font-size: 0.85rem; margin-top: 0.3rem; font-weight: 600; }
+.field [aria-invalid="true"] { border-color: #b3423a; background: #fffafa; }
+
+/* Visible keyboard focus everywhere, not just the browser default */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+.btn[disabled] { opacity: 0.65; cursor: progress; }
+
+/* Skip link for keyboard and screen-reader users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  font-weight: 700;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
 
 /* Page heroes (interior) */
 .page-hero { background: linear-gradient(180deg, #eef5ef 0%, var(--bg) 100%); padding: 2.25rem 0 1.75rem; text-align: center; }

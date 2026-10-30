@@ -5,9 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Good Karma Magic</title>
 <meta name="description" content="Questions about selling your Magic collection? Contact Good Karma Magic in Berkeley, CA.">
+<link rel="canonical" href="https://goodkarmamagic.com/contact">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Good Karma Magic">
+<meta property="og:title" content="Contact — Good Karma Magic">
+<meta property="og:description" content="Questions before you sell? Want to drop off in Berkeley? We answer quickly.">
+<meta property="og:url" content="https://goodkarmamagic.com/contact">
+<meta property="og:image" content="https://goodkarmamagic.com/screenshots/home-desktop.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#134f38">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html">Good Karma <span>Magic</span></a>
@@ -21,7 +32,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="page-hero">
     <div class="wrap">
       <h1>Contact</h1>
@@ -54,6 +65,7 @@
       <div style="margin-top:1.5rem; text-align:center; color:var(--muted)">
         <p>Good Karma Magic (FCTCard) · Berkeley, CA</p>
         <p>Local drop-offs by appointment · mail-in from anywhere in the US</p>
+        <p>Prefer email? Write to <a href="mailto:web@goodkarmamagic.com">web@goodkarmamagic.com</a> — it reaches the same inbox as this form.</p>
       </div>
     </div>
   </section>
@@ -70,13 +82,6 @@
 <div class="sticky-cta">
   <a class="btn btn-primary btn-block" href="sell.html">Start Your Appraisal</a>
 </div>
-<script>
-(function(){
-  var p=new URLSearchParams(location.search);
-  var b=document.getElementById('form-banner');
-  if(p.get('sent')==='1'){b.innerHTML='<p style="background:#e7f4ec;border:1px solid #1a6b4a;color:#134f38;padding:0.8rem 1rem;border-radius:8px;font-weight:600">Message sent — we will get back to you shortly.</p>';}
-  if(p.get('error')==='1'){b.innerHTML='<p style="background:#fdf0ef;border:1px solid #b3423a;color:#8c2f28;padding:0.8rem 1rem;border-radius:8px">Something went wrong sending that. Please try again in a minute.</p>';}
-})();
-</script>
+<script src="js/forms.js" defer></script>
 </body>
 </html>
