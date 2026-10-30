@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell Your Cards — Good Karma Magic</title>
+<meta name="description" content="Start your appraisal: tell us about your Magic: The Gathering collection. No sorting required — binders, boxes, and bulk welcome.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Good Karma <span>Magic</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="sell.html" aria-current="page">Sell</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="charity.html">Charity</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Start Your Appraisal</h1>
+      <p>Two minutes of typing, no sorting. We reply with next steps — usually the same day.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:1.5rem">
+    <div class="wrap wrap-narrow">
+      <form class="form-card" id="appraisal-form" action="/api/contact" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="page" value="sell">
+        <input type="text" name="website" value="" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div id="form-banner"></div>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="size">Roughly how big is the collection? <span class="hint">a guess is fine</span></label>
+          <select id="size" name="size">
+            <option>A shoebox or a few binders</option>
+            <option>A longbox or two</option>
+            <option>Several boxes / a closet shelf</option>
+            <option>"A lot" — I'd rather not count</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Tell us about it <span class="hint">optional — anything you remember: sets, years, the good stuff</span></label>
+          <textarea id="notes" name="notes" placeholder="e.g. mostly 90s–2000s, two binders of rares, some old lands my brother left behind…"></textarea>
+        </div>
+        <div class="field">
+          <label for="photos">Photos <span class="hint">optional — a binder page or two helps us pre-appraise</span></label>
+          <input id="photos" name="photos" type="file" accept="image/*">
+        </div>
+        <p><button class="btn btn-primary btn-lg btn-block" type="submit">Send it — get my appraisal started</button></p>
+        <p style="color:var(--muted); font-size:0.85rem; text-align:center; margin-bottom:0">No sorting needed before you send. Payment within 48 hours of approving your appraisal. A share of every purchase supports the <a href="charity.html">Computer Technologies Program</a> — it never comes out of your payout.</p>
+      </form>
+
+      <div style="margin-top:1.5rem; text-align:center; color:var(--muted)">
+        <p>Prefer to talk first? <a href="contact.html">Contact us</a> — or just bring the boxes to Berkeley.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Good Karma Magic (FCTCard)</strong> · Berkeley, CA · <a href="contact.html">Contact</a></p>
+    <p>Proudly supporting the <a href="https://www.ctpberk.org/" rel="noopener">Computer Technologies Program</a> — a career training program for people with disabilities.</p>
+    <p class="fineprint">Good Karma Magic is an independent buyer and is not affiliated with, endorsed by, or sponsored by Wizards of the Coast LLC. Magic: The Gathering is a trademark of Wizards of the Coast.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-primary btn-block" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to the form</a>
+</div>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var b=document.getElementById('form-banner');
+  if(p.get('sent')==='1'){b.innerHTML='<p style="background:#e7f4ec;border:1px solid #1a6b4a;color:#134f38;padding:0.8rem 1rem;border-radius:8px;font-weight:600">Thanks! Your request is in — we usually reply the same day.</p>';}
+  if(p.get('error')==='1'){b.innerHTML='<p style="background:#fdf0ef;border:1px solid #b3423a;color:#8c2f28;padding:0.8rem 1rem;border-radius:8px">Something went wrong sending that. Email us directly or try again in a minute.</p>';}
+})();
+</script>
+</body>
+</html>
