@@ -61,7 +61,3 @@ content:
     path: css/style.css
     format: code
 
-actions:
-  - name: apply-donation
-    label: Apply donation update
-    workflow: update-site.yml
