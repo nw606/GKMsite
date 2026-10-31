@@ -1,0 +1,67 @@
+# Pages CMS configuration — https://pagescms.org
+# Edit this site at https://app.pagescms.org after connecting your GitHub account.
+media:
+  input: media
+  output: /media
+
+content:
+  - name: settings
+    label: Site settings
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: donation_total
+        label: Donation total
+        type: string
+        description: Exact amount as shown on the site, e.g. $1,691.06 (include the dollar sign)
+      - name: donation_asof
+        label: "As of" period
+        type: string
+        description: e.g. September 2026
+
+  - name: pages
+    label: Pages (HTML)
+    type: group
+    items:
+      - name: home
+        label: Homepage
+        type: file
+        path: index.html
+        format: code
+      - name: sell
+        label: Sell page
+        type: file
+        path: sell.html
+        format: code
+      - name: how
+        label: How it works
+        type: file
+        path: how-it-works.html
+        format: code
+      - name: charity
+        label: Charity page
+        type: file
+        path: charity.html
+        format: code
+      - name: about
+        label: About page
+        type: file
+        path: about.html
+        format: code
+      - name: contact
+        label: Contact page
+        type: file
+        path: contact.html
+        format: code
+
+  - name: design
+    label: Stylesheet (CSS)
+    type: file
+    path: css/style.css
+    format: code
+
+actions:
+  - name: apply-donation
+    label: Apply donation update
+    workflow: update-site.yml
