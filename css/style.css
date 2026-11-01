@@ -126,3 +126,9 @@ details p { color: var(--muted); margin: 0.6rem 0 0; }
   .charity-grid { grid-template-columns: 1.6fr 1fr; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
 }
+
+/* Legal pages + footer legal line */
+.legal-body h2 { font-size: 1.25rem; margin: 1.8rem 0 0.5rem; }
+.legal-body p, .legal-body li { color: var(--muted); }
+.legal-body li { margin-bottom: 0.4rem; }
+.legal { font-size: 0.85rem; margin-top: 0.8rem; }
