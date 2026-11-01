@@ -1,6 +1,6 @@
 # Good Karma Magic — website
 
-Static marketing site for Good Karma Magic (FCTCard), Berkeley CA.
+Static marketing site for Good Karma Magic, Berkeley CA.
 Served by **Cloudflare Pages** from this repository: https://gkmsite.pages.dev
 
 ## Structure
