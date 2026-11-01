@@ -64,6 +64,16 @@ content:
         type: file
         path: css/blog.css
         format: code
+      - name: privacy
+        label: Privacy policy
+        type: file
+        path: privacy.html
+        format: code
+      - name: terms
+        label: Terms of service
+        type: file
+        path: terms.html
+        format: code
       - name: insights-sellers
         label: Verified sellers (blog)
         type: file
