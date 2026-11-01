@@ -31,8 +31,8 @@ function done(request, form) {
   return Response.redirect(new URL(backPath(form, 'sent=1'), request.url).href, 303);
 }
 
-function fail(request, form, code, status = 500) {
-  if (wantsJson(request)) return json({ ok: false, error: code }, status);
+function fail(request, form, code, status = 500, diag = '') {
+  if (wantsJson(request)) return json({ ok: false, error: code, ...(diag ? { detail: diag } : {}) }, status);
   return Response.redirect(new URL(backPath(form, 'error=1'), request.url).href, 303);
 }
 
@@ -95,6 +95,7 @@ export async function onRequestPost({ request, env }) {
   if (attachments.length) lines.push('', `(${attachments.length} photo${attachments.length > 1 ? 's' : ''} attached)`);
 
   let sent = false;
+  let diag = '';
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -112,10 +113,15 @@ export async function onRequestPost({ request, env }) {
       }),
     });
     sent = r.ok;
-    if (!sent) console.error('resend send failed:', r.status, (await r.text()).slice(0, 300));
+    if (!sent) {
+      const body = await r.text();
+      console.error('resend send failed:', r.status, body.slice(0, 300));
+      diag = r.status + ': ' + body.replace(/\s+/g, ' ').slice(0, 140);
+    }
   } catch (e) {
     console.error('resend fetch error:', e && e.message);
+    diag = 'network: ' + (e && e.message);
   }
 
-  return sent ? done(request, form) : fail(request, form, 'send_failed');
+  return sent ? done(request, form) : fail(request, form, 'send_failed', 500, diag);
 }
