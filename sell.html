@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sell Your Cards — Good Karma Magic</title>
 <meta name="description" content="Start your appraisal: tell us about your Magic: The Gathering collection. No sorting required — binders, boxes, and bulk welcome.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Good Karma Magic">
+<meta property="og:title" content="Sell Your Cards — Good Karma Magic">
+<meta property="og:description" content="Start your appraisal: tell us about your Magic: The Gathering collection. No sorting required — binders, boxes, and bulk welcome.">
+<meta property="og:url" content="https://gkmsite.pages.dev/sell.html">
+<meta property="og:image" content="https://gkmsite.pages.dev/screenshots/home-desktop.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,7 +38,7 @@
 
   <section class="section" style="padding-top:1.5rem">
     <div class="wrap wrap-narrow">
-      <form class="form-card" id="appraisal-form" action="/api/contact" method="post" enctype="multipart/form-data">
+      <form class="form-card" id="appraisal-form" action="/api/contact" method="post">
         <input type="hidden" name="page" value="sell">
         <input type="text" name="website" value="" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div id="form-banner"></div>
@@ -56,12 +63,9 @@
           <label for="notes">Tell us about it <span class="hint">optional — anything you remember: sets, years, the good stuff</span></label>
           <textarea id="notes" name="notes" placeholder="e.g. mostly 90s–2000s, two binders of rares, some old lands my brother left behind…"></textarea>
         </div>
-        <div class="field">
-          <label for="photos">Photos <span class="hint">optional — a binder page or two helps us pre-appraise</span></label>
-          <input id="photos" name="photos" type="file" accept="image/*">
-        </div>
         <p><button class="btn btn-primary btn-lg btn-block" type="submit">Send it — get my appraisal started</button></p>
         <p style="color:var(--muted); font-size:0.85rem; text-align:center; margin-bottom:0">No sorting needed before you send. Payment within 48 hours of approving your appraisal. A share of every purchase supports the <a href="charity.html">Computer Technologies Program</a> — it never comes out of your payout.</p>
+        <p style="color:var(--muted); font-size:0.85rem; text-align:center; margin:0.5rem 0 0">Questions, or want to talk first? Email us: <a href="mailto:alex@goodkarmamagic.com">alex@goodkarmamagic.com</a></p>
       </form>
 
       <div style="margin-top:1.5rem; text-align:center; color:var(--muted)">
@@ -73,15 +77,12 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Good Karma Magic (FCTCard)</strong> · Berkeley, CA · <a href="contact.html">Contact</a></p>
+    <p><strong>Good Karma Magic</strong> · Berkeley, CA · <a href="contact.html">Contact</a></p>
     <p>Proudly supporting the <a href="https://www.ctpberk.org/" rel="noopener">Computer Technologies Program</a> — a career training program for people with disabilities.</p>
     <p class="fineprint">Good Karma Magic is an independent buyer and is not affiliated with, endorsed by, or sponsored by Wizards of the Coast LLC. Magic: The Gathering is a trademark of Wizards of the Coast.</p>
   </div>
 </footer>
 
-<div class="sticky-cta">
-  <a class="btn btn-primary btn-block" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to the form</a>
-</div>
 <script>
 (function(){
   var p=new URLSearchParams(location.search);
