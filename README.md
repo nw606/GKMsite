@@ -44,3 +44,4 @@ npx wrangler pages dev .   # includes the /api/contact function
 ```
 
 Deploying is automatic on push to `main` (Cloudflare Pages Git integration).
+<!-- redeploy 2 -->
