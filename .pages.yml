@@ -54,6 +54,16 @@ content:
         type: file
         path: contact.html
         format: code
+      - name: insights
+        label: Insights blog
+        type: file
+        path: insights/index.html
+        format: code
+      - name: blogcss
+        label: Blog stylesheet (CSS)
+        type: file
+        path: css/blog.css
+        format: code
 
   - name: design
     label: Stylesheet (CSS)
