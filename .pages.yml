@@ -64,6 +64,11 @@ content:
         type: file
         path: css/blog.css
         format: code
+      - name: insights-sellers
+        label: Verified sellers (blog)
+        type: file
+        path: insights/verified-sellers.html
+        format: code
 
   - name: design
     label: Stylesheet (CSS)
