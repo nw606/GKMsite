@@ -72,6 +72,7 @@ const sidebar = root => `
         <ul>
           <li><a href="${root}insights/index.html">All posts</a></li>
           <li><a href="${root}insights/verified-sellers.html">Verified sellers</a></li>
+          <li><a href="${root}insights/creators-we-follow.html">Creators We Follow</a></li>
           <li><a href="https://goodkarmamagic.com/insights/feed/rss">RSS feed</a></li>
         </ul>
       </nav>
