@@ -16,7 +16,7 @@ content:
         type: string
         description: Exact amount as shown on the site, e.g. $1,691.06 (include the dollar sign)
       - name: donation_asof
-        label: "As of" period
+        label: As of period
         type: string
         description: e.g. September 2026
 
@@ -89,6 +89,11 @@ content:
         type: collection
         path: insights/post
         extension: html
+        format: code
+      - name: rss-feed
+        label: Insights RSS feed
+        type: file
+        path: insights/feed/rss.xml
         format: code
 
   - name: design
