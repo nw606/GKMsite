@@ -1,0 +1,6 @@
+/insights/feed/rss
+  Content-Type: application/rss+xml; charset=utf-8
+/insights/feed/rss.html
+  Content-Type: application/rss+xml; charset=utf-8
+/insights/feed/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
