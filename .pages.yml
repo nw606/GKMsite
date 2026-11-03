@@ -84,6 +84,12 @@ content:
         type: file
         path: insights/creators-we-follow.html
         format: code
+      - name: blog-posts
+        label: Insights blog posts
+        type: collection
+        path: insights/post
+        extension: html
+        format: code
 
   - name: design
     label: Stylesheet (CSS)
@@ -95,3 +101,4 @@ actions:
   - name: apply-donation
     label: Apply donation update
     workflow: update-site.yml
+
