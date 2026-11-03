@@ -79,6 +79,11 @@ content:
         type: file
         path: insights/verified-sellers.html
         format: code
+      - name: insights-creators
+        label: Creators we follow (blog)
+        type: file
+        path: insights/creators-we-follow.html
+        format: code
 
   - name: design
     label: Stylesheet (CSS)
